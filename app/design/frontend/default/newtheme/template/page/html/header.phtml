@@ -29,18 +29,42 @@
 ?>
 <div class="header-container">
     <div class="header">
-        <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif?>
+        <?php if ($this->getIsHomePage()): ?>
+            <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getSkinUrl('images/logo3.png') ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+        <?php else: ?>
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif ?>
+
         <div class="quick-access">
-            <?php echo $this->getChildHtml('topSearch') ?>
-            <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
+            <?php //echo $this->getChildHtml('topSearch') ?>
+           <!-- <p class="welcome-msg"><?php //echo $this->getChildHtml('welcome')      ?> <?php // echo $this->getAdditionalHtml()      ?></p> -->
             <?php echo $this->getChildHtml('topLinks') ?>
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
+
+
         <?php echo $this->getChildHtml('topContainer'); ?>
+
+        <div class="my-cart">
+
+            <?php
+            $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+            $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+            if ($count == 0) {
+                echo $this->__('<a href="/checkout/cart" class="cartgo">0 ITEMS</a>', $count);
+            }
+            if ($count == 1) {
+                echo $this->__('<a href="/checkout/cart" class="cartgo">1 ITEM</a>', $count);
+            }
+            if ($count > 1) {
+                echo $this->__('<a href="/checkout/cart" class="cartgo">%s ITMES</a>', $count);
+            }
+            echo $this->__('', $this->helper('core')->formatPrice($total, false));
+            ?>
+            <img src="<?php echo $this->getSkinUrl('images/bag.png') ?>" alt="car bag" >
+        </div>
+
     </div>
+
 </div>
 <?php echo $this->getChildHtml('topMenu') ?>
