@@ -38,7 +38,6 @@
             <li><a class="home-img" href="<?php echo $this->__('index.php') ?>"><img src="<?php echo $this->getSkinUrl('images/newhome.png') ?>" alt="car bag" ></a></li>
             <?php echo $_menu ?>
             <li class="gift"><a href="<?php echo $this->__('index.php/gift.phtml') ?>"><span><?php echo $this->__('Gift') ?></span></a></li>
-
         </ul>
 
     </div>
@@ -49,11 +48,13 @@
 
     <div id="new-nav">
 
-
         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('new_link')->toHtml(); ?>
-
-
-
+        <div class="contact-us">
+            <div class="old-image">
+                <img src="<?php echo $this->getSkinUrl('images/old_phone.png') ?>" alt="phone" >  
+            </div>
+            <p class="number"><?php echo Mage::getStoreConfig('general/store_information/phone'); ?> /</p><p class="call-back">We are happy to call you back</p></div>
+        
         <div id="my-search" class="quick-access">
             <?php echo $this->getChildHtml('topSearch') ?>
         </div> 
