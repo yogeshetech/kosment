@@ -41,6 +41,7 @@
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
         <div class="main-container col2-left-layout">
+         
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
@@ -48,8 +49,15 @@
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
                 <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+                 <div class="clear"></div>
+                  <div class="new-pagination">
+                      <?php  echo $this->getLayout()->createBlock('cms/block')->setBlockId('my_bottom_image')->toHtml(); ?>
+                      </div>
             </div>
+            
+          
         </div>
+        
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>

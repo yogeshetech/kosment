@@ -27,10 +27,12 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
+
+
 <div class="header-container">
     <div class="header">
         <?php if ($this->getIsHomePage()): ?>
-            <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getSkinUrl('images/logo3.png') ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+            <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
         <?php else: ?>
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif ?>
@@ -44,9 +46,12 @@
 
 
         <?php echo $this->getChildHtml('topContainer'); ?>
-
+        <div class="header-img">
+            <img src="<?php echo $this->getSkinUrl('images/e_shop1.png') ?>" alt=" e_shop" >
+        </div>
+             <p class="refund2">Refund Warranty</p> 
         <div class="my-cart">
-
+         
             <?php
             $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
             $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
@@ -63,6 +68,9 @@
             ?>
             <img src="<?php echo $this->getSkinUrl('images/bag.png') ?>" alt="car bag" >
         </div>
+             <div class="show-content">
+                  <a href="<?php echo $this->__('checkout/cart') ?>"  class=""><span><?php echo $this->__('Show Content') ?></span></a>
+             </div>
 
     </div>
 

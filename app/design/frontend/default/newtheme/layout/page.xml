@@ -51,6 +51,7 @@ Default layout, loads most of the pages
                   
                 <action method="addJs"><script>etech/jquery-1.4.4.min.js</script></action>
                 <action method="addJs"><script>etech/slides.min.jquery.js</script></action>
+                   <action method="addJs"><script>etech/myjs.js</script></action>
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
 
                 <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
@@ -116,6 +117,8 @@ Default layout, loads most of the pages
 
         <block type="core/profiler" output="toHtml" name="core_profiler"/>
     </default>
+      
+
 
     <print translate="label" module="page">
         <label>All Pages (Print Version)</label>
@@ -143,6 +146,7 @@ Default layout, loads most of the pages
                 <label>Main Content Area</label>
             </block>
 
+
         </block>
     </print>
 
@@ -155,6 +159,7 @@ Default layout, loads most of the pages
             <action method="setIsHandle"><applied>1</applied></action>
         </reference>
     </page_empty>
+  
 
     <page_one_column translate="label">
         <label>All One-Column Layout Pages</label>
