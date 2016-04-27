@@ -24,8 +24,255 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if($_heading = $this->getContentHeading()): ?>
+  <script language="javascript">
+        $(function() {
+            $('#slides').slides({
+                preload: true,
+                preloadImage: 'img/loading.gif',
+                play: 5000,
+                pause: 2500,
+                hoverPause: true
+            });
+
+        });
+    </script>
+<?php if ($_heading = $this->getContentHeading()): ?>
     <div class="page-title">
         <h1><?php echo $_heading; ?></h1>
     </div>
 <?php endif; ?>
+<div class="my-body">
+    <div class="my-body-left"> 
+        <div class="new-slider">
+            <div id="container">
+                <div id="example">
+
+                    <div id="slides">
+                        <div class="slides_container">
+
+                            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepageslider')->toHtml(); ?>
+                            <a>
+
+                                <div class="new-slider">
+                                    <div class="left-arrow">
+
+
+                                    </div>
+
+                                    <img class="main-img" src="<?php echo $this->getSkinUrl('images/slider_img.png') ?>" alt="<?php echo $this->__("search image") ?>" />
+                                    <div class="sl-text">
+                                        <img src="<?php echo $this->getSkinUrl('images/nback1.png') ?>" alt="<?php echo $this->__("image") ?>" />
+                                        <h2>Vorbestellen.Testen</h2>
+
+                                    </div>
+                                    <div class="sl-text2">
+                                        <img src="<?php echo $this->getSkinUrl('images/back3.png') ?>" alt="<?php echo $this->__("image") ?>" />
+                                        <h2>Erfahrung mitteilen SPAREN!</h2>
+
+                                    </div>
+
+                                    <div class="right-arrow" >
+                                      
+
+                                    </div>
+                                    <div class="sl-button">
+                                        <button type="submit" title="<?php echo $this->__('JETZT TESTER WERDEN & SPAREN!') ?>" class="button"><span><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><?php echo $this->__('JETZT TESTER WERDEN & SPAREN!') ?></span></span></button>
+
+                                    </div>
+                                </div>  
+
+                            </a>
+                            <a>
+
+                                <div class="new-slider">
+                                    <div class="left-arrow">
+
+
+                                    </div>
+
+                                    <img class="main-img" src="<?php echo $this->getSkinUrl('images/slider_img.png') ?>" alt="<?php echo $this->__("search image") ?>" />
+                                    <div class="sl-text">
+                                        <img src="<?php echo $this->getSkinUrl('images/nback1.png') ?>" alt="<?php echo $this->__("image") ?>" />
+                                        <h2>Vorbestellen.Testen</h2>
+
+                                    </div>
+                                    <div class="sl-text2">
+                                        <img src="<?php echo $this->getSkinUrl('images/back3.png') ?>" alt="<?php echo $this->__("image") ?>" />
+                                        <h2>Erfahrung mitteilen SPAREN!</h2>
+
+                                    </div>
+
+                                    <div class="right-arrow" >
+                                      
+
+                                    </div>
+                                    <div class="sl-button">
+                                        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><?php echo $this->__('JETZT TESTER WERDEN & SPAREN!') ?></span></span></button>
+
+                                    </div>
+                                </div>  
+
+                            </a>   
+                            
+                        </div>
+
+                        <img  class="prev" src="<?php echo $this->getSkinUrl('images/left_base.png') ?>" alt="<?php echo $this->__("search image") ?>" />
+                        <a href="#" class="prev"> <img src="<?php echo $this->getSkinUrl('images/leftarrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /></a>
+
+
+                        <img class="next" src="<?php echo $this->getSkinUrl('images/right_base.png') ?>" alt="<?php echo $this->__("search image") ?>" />
+                        <a href="#" class="next"> <img src="<?php echo $this->getSkinUrl('images/right_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /></a> 
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="my-body-right"> 
+        <div class="right-one"> 
+            <div class="telephone">
+                <img src="<?php echo $this->getSkinUrl('images/telephone.png') ?>" alt="<?php echo $this->__("search image") ?>" /> 
+            </div>
+            <div class="contact">
+                <p>Free Advice</p>
+                <p class="phone-no"><?php echo Mage::getStoreConfig('general/store_information/phone'); ?></p>
+                <p class="feed">like we call you back</p>
+                <div class="right-down">
+                    <a href="#"><img src="<?php echo $this->getSkinUrl('images/down_img.png') ?>" alt="<?php echo $this->__("image") ?>" /></a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="right-two">
+            <div class="comp">
+                <img src="<?php echo $this->getSkinUrl('images/comp.png') ?>" alt="<?php echo $this->__("search image") ?>" /> 
+            </div>
+            <div class="comp-data">
+                <p>Free Samples</p>
+
+                <p class="every-order">with every order</p>
+
+            </div>
+
+        </div>
+        <div class="right-three">
+            <div class="car-four">
+                <img src="<?php echo $this->getSkinUrl('images/car.png') ?>" alt="<?php echo $this->__("search image") ?>" /> 
+            </div>
+            <div class="car-data">
+                <p>Free Shipping</p>
+
+                <p class="every-order">Purchases over from 4</p>
+
+            </div>
+
+        </div>
+        <div class="right-four">
+            <div class="refund">
+                <img src="<?php echo $this->getSkinUrl('images/e_photo.png') ?>" alt="<?php echo $this->__("search image") ?>" /> 
+            </div>
+            <div class="refund-data">
+                <p>Refund warranty</p>
+
+
+
+            </div>
+
+        </div>
+        <div class="right-last">
+            <div class="euro-img">
+                <img src="<?php echo $this->getSkinUrl('images/euro.png') ?>" alt="<?php echo $this->__("image") ?>" /> 
+            </div>
+            <div class="euro-text">
+                <p>Purchase on invoice</p>
+            </div>
+            <div class="euro-text1">
+                <p class="pay">now buy later pay!</p>
+                <p>More about: <a href="#">website.com</a></p>
+            </div>
+            <div class="euro-new-text">
+                <img src="<?php echo $this->getSkinUrl('images/pay_text.png') ?>" alt="<?php echo $this->__("image") ?>" /> 
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <div class="clear"></div>
+    <div class="pramotion">
+        <div class="monkey">
+            <div class="monkey-text">
+                <h1 class="mn-text1">Wie</h1> <p  class="viel">viel</p>
+                <h1 class="affe">AFFE </h1>
+                <p class="steckt">steckt in Dir? </p>
+            </div>
+            <div class="monkey-big">
+
+                <img src="<?php echo $this->getSkinUrl('images/monkey.png') ?>" alt="<?php echo $this->__("image") ?>" />
+                <img class="human" src="<?php echo $this->getSkinUrl('images/humen1.png') ?>" alt="<?php echo $this->__("image") ?>" />
+            </div>
+            <div class="monkey-submit">
+                <button type="submit" title="<?php echo $this->__('Find Out Now') ?>" class="button"><span><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><?php echo $this->__('Find out Now!') ?></span></span></button>
+            </div>
+        </div>
+        <div class="kosmetic">
+
+            <div class="kosmetic-text">
+                <h1 class="promotion">Promotion</h1>
+                <p>text text text text</p>
+            </div>
+            <div class="kos-submit">
+                <button type="submit" title="<?php echo $this->__('to the product') ?>" class="button"><span><img src="<?php echo $this->getSkinUrl('images/sl_arrow.png') ?>" alt="<?php echo $this->__("search image") ?>" /><?php echo $this->__('to the product') ?></span></span></button>
+            </div>
+        </div>
+        <div class="welcome">
+            <div class="welcome-main">
+                <h1 class="welcome-text">Welcom...</h1>
+                <p>find here your hau tip so you product suitable for you will...</p>
+            </div> 
+            <div class="welcome-skin">
+                <h1 class="welcome-text2">SKIN TYPE</h1>
+                <p>You Are</p>
+                <img  src="<?php echo $this->getSkinUrl('images/question.png') ?>" alt="<?php echo $this->__("image") ?>" />
+            </div> 
+
+        </div>
+        <div class="exclusive">
+            <div class="welcome-main">
+                <h1 class="welcome-text">Excluding...</h1>
+                <p>When, is how and what to use? Secret for a groomed look, we reveal heir...</p>
+            </div> 
+            <div class="exclusive-skin">
+                <h1 class="exclusive-text2">CARE</h1>
+                <h1 class="exclusive-tips"> TIPS</h1>
+                <img  src="<?php echo $this->getSkinUrl('images/excl.png') ?>" alt="<?php echo $this->__("image") ?>" />
+            </div> 
+
+        </div>
+
+    </div>
+    <div class="new-button">
+        <div class="new-left" > 
+
+            <button type="submit" title="<?php echo $this->__('New') ?>" class="button"><span><?php echo $this->__('NEW') ?></span></button>
+
+        </div>
+        <div class="new-right" > 
+            <button type="submit" title="<?php echo $this->__('Care Tips') ?>" class="button"><span><?php echo $this->__('Care Tips') ?></span></span></button>
+            <button type="submit" title="<?php echo $this->__('Current Best Seller') ?>" class="button"><span><?php echo $this->__('Current Best Seller') ?></span></span></button>
+            <button type="submit" title="<?php echo $this->__('Deals') ?>" class="button"><span><?php echo $this->__('Deals') ?></span></span></button>
+        </div>
+    </div>
+
+</div>
+
+   
+

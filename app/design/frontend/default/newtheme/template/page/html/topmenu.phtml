@@ -32,10 +32,32 @@
  */
 ?>
 <?php $_menu = $this->getHtml('level-top') ?>
-<?php if($_menu): ?>
-<div class="nav-container">
-    <ul id="nav">
-        <?php echo $_menu ?>
-    </ul>
+<?php if ($_menu): ?>
+    <div class="nav-container">
+        <ul id="nav">
+            <li><a class="home-img" href="<?php echo $this->__('index.php') ?>"><img src="<?php echo $this->getSkinUrl('images/newhome.png') ?>" alt="car bag" ></a></li>
+            <?php echo $_menu ?>
+            <li class="gift"><a href="<?php echo $this->__('index.php/gift.phtml') ?>"><span><?php echo $this->__('Gift') ?></span></a></li>
+
+        </ul>
+
+    </div>
+
+<?php endif
+?>
+<div class="new-top">
+
+    <div id="new-nav">
+
+
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('new_link')->toHtml(); ?>
+
+
+
+        <div id="my-search" class="quick-access">
+            <?php echo $this->getChildHtml('topSearch') ?>
+        </div> 
+    </div>
+
+
 </div>
-<?php endif ?>
