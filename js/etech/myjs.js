@@ -34,10 +34,54 @@ $(document).ready(function() {
         }
 
     });
+    $(".my-cat-button").click(function(e) {
+        e.preventDefault();
+        if (count == 0) {
+            $('#nav').slideDown();
+            $("#nav").css("display", "block");
+
+            count++;
+        }
+        else {
+            $('#nav').slideUp();
+            //$(".quick-access").css("display","none");
+
+            count = 0;
+        }
+
+    });
+
+
+    $(".new-drop").click(function(e) {
+        e.preventDefault();
+        if (count == 0) {
+            $(this).parent('li').css({"background-color": "gray", "height": "70px"});
+
+
+            count++;
+        }
+        else {
+            $(this).parent('li').css({"background-color": "black", "height": "25px"});
+            count = 0;
+        }
+
+    });
+
+    var thetimeout;
+    $('#my-search .form-search .button').mouseover(function() {
+        clearTimeout(thetimeout);
+        $('#my-search .form-search #search').show(300);
+    });
+    // $('#my-search .form-search .button').mouseleave(function() {
+    //  thetimeout = setTimeout(function() {
+
+    // });
+    //  });
 
 
 
 });
+
 
 jQuery(window).load(function() {
 
